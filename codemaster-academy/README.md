@@ -1,180 +1,194 @@
-# SMVITM-WorkBench 🚀
+# SMVITM - WorkBench
 
-A gamified coding education platform that makes learning programming fun and effective. Progress through levels, earn badges, and master coding skills from HTML/CSS to full-stack development.
+A modern, full-stack web application built with Next.js, TypeScript, and Supabase, designed to provide an interactive learning platform for coding education.
 
-## Features ✨
+## 🚀 Features
 
-- **Gamified Learning**: Earn points, badges, and unlock new levels
-- **Structured Curriculum**: 4 progressive levels from frontend to full-stack
-- **Interactive Content**: Quizzes, coding puzzles, and hands-on projects
-- **Progress Tracking**: Visual progress indicators and achievement system
-- **Modern Tech Stack**: Next.js 14, TypeScript, Supabase, Tailwind CSS
+- **Modern Tech Stack**: Built with Next.js 15, React 19, and TypeScript
+- **Real-time Database**: Powered by Supabase for seamless data management
+- **Beautiful UI**: Enhanced with Framer Motion for smooth animations
+- **State Management**: Efficient state handling with Zustand
+- **Type Safety**: Full TypeScript support for robust development
+- **Responsive Design**: Tailwind CSS for modern, responsive layouts
+- **Toast Notifications**: User-friendly notifications with react-hot-toast
+- **Authentication**: Secure user authentication with Supabase Auth
+- **Progress Tracking**: Real-time progress tracking and achievements
+- **Interactive Learning**: Gamified learning experience with levels and badges
 
-## Learning Path 🎯
+## 🛠️ Tech Stack
 
-### Level 1: Water Master 💧 (Frontend Development)
-- HTML5/CSS3 Fundamentals
-- JavaScript Essentials
-- React Framework
-
-### Level 2: Fire Master 🔥 (Backend Development)
-- Node.js & Express
-- Databases (MongoDB/MySQL)
-
-### Level 3: Air Master 💨 (Full-Stack Integration)
-- Cloud Hosting and CI/CD
-- Capstone Project Development
-
-### Level 4: Earth Master 🌍 (Advanced Mastery)
-- Evaluation & Filtering
-- Advanced System Design
-
-### Final Goal: Space Master 🚀
-- Complete all levels + major project submission
-
-## Tech Stack 🛠️
-
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Framer Motion
-- **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- **Frontend Framework**: Next.js 15.3.3
+- **UI Library**: React 19
+- **Language**: TypeScript
+- **Database**: Supabase
 - **State Management**: Zustand
-- **UI Components**: Lucide React, React Hot Toast
-- **Deployment**: Vercel (recommended)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Notifications**: React Hot Toast
 
-## Quick Start 🚀
+## 📋 Prerequisites
 
-### Prerequisites
-- Node.js 18+
-- npm/yarn/pnpm
-- Supabase account
+Before you begin, ensure you have the following installed:
+- Node.js (Latest LTS version recommended)
+- npm or yarn
+- Git
 
-### 1. Clone the Repository
-```bash
-git clone <your-repo-url>
-cd smvitm-workbench
-```
+## 🚀 Getting Started
 
-### 2. Install Dependencies
-```bash
-npm install
-```
+1. **Clone the repository**
+   ```bash
+   git clone [your-repository-url]
+   cd smvitm-workbench
+   ```
 
-### 3. Set Up Supabase
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-1. Create a new project at [supabase.com](https://supabase.com)
-2. Go to Settings > API to get your project URL and anon key
-3. Copy `.env.local.example` to `.env.local` and fill in your Supabase credentials:
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory and add your Supabase credentials:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-### 4. Set Up Database
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-1. In your Supabase dashboard, go to the SQL Editor
-2. Run the schema creation script from `database/schema.sql`
-3. Run the seed data script from `database/seed.sql`
-
-### 5. Start Development Server
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the application.
-
-## Database Setup 📊
-
-The application uses Supabase PostgreSQL with the following main tables:
-
-- `users` - User profiles and progress
-- `levels` - Learning levels (Water, Fire, Air, Earth Master)
-- `phases` - Sub-phases within each level
-- `quizzes` - Quiz questions and answers
-- `puzzles` - Coding challenges
-- `projects` - Project assignments
-- `user_progress` - Progress tracking
-- `badges` - Achievement system
-- `user_badges` - User achievements
-
-## Project Structure 📁
+## 🏗️ Project Structure
 
 ```
-src/
-├── app/                    # Next.js app router
-│   ├── dashboard/         # Dashboard pages
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Landing page
-├── components/            # React components
-│   ├── dashboard/         # Dashboard-specific components
-│   ├── AuthModal.tsx      # Authentication modal
-│   ├── LandingPage.tsx    # Landing page component
-│   └── LoadingSpinner.tsx # Loading component
-├── contexts/              # React contexts
-│   └── AuthContext.tsx    # Authentication context
-├── lib/                   # Utilities and configurations
-│   └── supabase.ts        # Supabase client and types
-└── store/                 # State management
-    └── progressStore.ts   # Progress tracking store
+smvitm-workbench/
+├── src/
+│   ├── app/                    # Next.js app router pages
+│   │   ├── dashboard/         # Dashboard pages
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout
+│   │   └── page.tsx           # Landing page
+│   ├── components/            # React components
+│   │   ├── dashboard/         # Dashboard-specific components
+│   │   ├── AuthModal.tsx      # Authentication modal
+│   │   ├── LandingPage.tsx    # Landing page component
+│   │   └── LoadingSpinner.tsx # Loading component
+│   ├── contexts/              # React contexts
+│   │   └── AuthContext.tsx    # Authentication context
+│   ├── lib/                   # Utilities and configurations
+│   │   └── supabase.ts        # Supabase client and types
+│   └── store/                 # State management
+│       └── progressStore.ts   # Progress tracking store
+├── public/                    # Static files
+├── database/                  # Database related files
+├── .next/                     # Next.js build output
+├── node_modules/              # Dependencies
+├── package.json               # Project configuration
+├── tsconfig.json              # TypeScript configuration
+├── next.config.ts             # Next.js configuration
+└── README.md                  # Project documentation
 ```
 
-## Development 💻
+## 📱 Pages and Components
 
-### Available Scripts
+### Main Pages
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+1. **Landing Page** (`src/app/page.tsx`)
+   - Entry point of the application
+   - Handles authentication state
+   - Redirects authenticated users to dashboard
+   - Shows `LandingPage` component for non-authenticated users
 
-### Adding New Features
+2. **Dashboard Page** (`src/app/dashboard/page.tsx`)
+   - Protected route requiring authentication
+   - Displays user's learning progress
+   - Features:
+     - Welcome section with user info
+     - Progress overview
+     - Level cards
+     - Badge showcase
+     - Recent activity feed
 
-1. **New Level/Phase**: Update the database seed data and level components
-2. **New Quiz/Puzzle**: Add to the respective database tables
-3. **New Badge**: Define in badges table with requirements
-4. **UI Components**: Add to the components directory with TypeScript
+### Core Components
 
-## Deployment 🚀
+1. **Authentication**
+   - `AuthModal.tsx`: Handles user authentication
+   - `AuthContext.tsx`: Manages authentication state
 
-### Vercel (Recommended)
+2. **Dashboard Components**
+   - `DashboardHeader`: Navigation and user info
+   - `ProgressOverview`: Learning progress visualization
+   - `LevelCards`: Display of learning levels
+   - `RecentActivity`: User's recent actions
+   - `BadgeShowcase`: Achievement badges display
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy automatically on push
+3. **UI Components**
+   - `LoadingSpinner.tsx`: Loading state indicator
+   - `LandingPage.tsx`: Main landing page UI
 
-### Other Platforms
+## 🛠️ Available Scripts
 
-The app can be deployed on any platform that supports Next.js:
-- Netlify
-- Railway
-- AWS Amplify
-- DigitalOcean App Platform
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build the application for production
+- `npm run start` - Start the production server
+- `npm run lint` - Run ESLint for code linting
 
-## Contributing 🤝
+## 🔧 Development
+
+The project uses several modern development tools and practices:
+
+- **TypeScript**: For type safety and better developer experience
+- **ESLint**: For code linting and maintaining code quality
+- **Tailwind CSS**: For utility-first styling
+- **Turbopack**: For faster development builds
+
+## 📦 Dependencies
+
+### Production Dependencies
+- @supabase/ssr
+- @supabase/supabase-js
+- framer-motion
+- lucide-react
+- next
+- react
+- react-dom
+- react-hot-toast
+- uuid
+- zustand
+
+### Development Dependencies
+- @types/node
+- @types/react
+- @types/react-dom
+- eslint
+- tailwindcss
+- typescript
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License 📄
+## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support 💬
+## 👥 Authors
 
-If you have any questions or need help setting up the project:
+- Your Name - Initial work
 
-1. Check the [Issues](https://github.com/your-username/smvitm-workbench/issues) page
-2. Create a new issue if your problem isn't already addressed
-3. Join our community discussions
+## 🙏 Acknowledgments
 
----
-
-**Happy Coding! 🎉**
-
-Start your journey to become a CodeMaster today!
+- Next.js team for the amazing framework
+- Supabase for the backend infrastructure
+- All contributors who have helped shape this project
