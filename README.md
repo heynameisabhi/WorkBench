@@ -39,7 +39,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
    ```bash
    git clone [your-repository-url]
-   cd smvitm-workbench
+   cd codemaster-academy
    ```
 
 2. **Install dependencies**
@@ -68,7 +68,7 @@ Before you begin, ensure you have the following installed:
 ## 🏗️ Project Structure
 
 ```
-smvitm-workbench/
+codemaster-academy/
 ├── src/
 │   ├── app/                    # Next.js app router pages
 │   │   ├── dashboard/         # Dashboard pages
